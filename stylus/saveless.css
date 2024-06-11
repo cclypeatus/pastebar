@@ -1,0 +1,11 @@
+/*
+  URLS matching the regexp:
+  .+\/\/pastebin.com\/
+*/
+
+/* 
+  Removes Optional Paste Settings except for syntax highlighting
+  - Must be deactivated to save new pastes
+  - Kept separate to not target edit pastes
+*/
+.post-form__left > *:not(.field-postform-format) { display: none; }

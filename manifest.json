@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "Pastebar",
+  "version": "1.0",
+  "description": "Extension to render Pastebin to sidebar. Use with Stylus for optimal results.",
+  "icons": {
+      "48": "fa-note-sticky/dark.svg",
+      "96": "fa-note-sticky/dark.svg"
+  },
+
+  "browser_action": {
+    "default_title": "Pastebar",
+    "default_icon": {
+      "16": "fa-note-sticky/dark.svg",
+      "32": "fa-note-sticky/dark.svg"
+    },
+    "theme_icons": [{
+      "light": "fa-note-sticky/light.svg",
+      "dark":  "fa-note-sticky/dark.svg",
+      "size":  16
+    }, {
+      "light": "fa-note-sticky/light.svg",
+      "dark":  "fa-note-sticky/dark.svg",
+      "size":  32
+    }],
+    "browser_style": true
+  },
+
+  "sidebar_action": {
+    "default_panel": "dummy.html",
+    "default_icon": {
+      "16": "fa-note-sticky/dark.svg",
+      "32": "fa-note-sticky/dark.svg"
+    },
+    "browser_style": false,
+    "open_at_install": false
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}

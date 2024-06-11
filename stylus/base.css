@@ -1,0 +1,147 @@
+/*
+  URLS matching the regexp:
+  .+\/\/pastebin.com\/(edit\/.+)?
+*/
+
+/*
+HIDING STYLES
+still shows textarea, most Optional Paste Settings, and account-related options.
+*/
+body > 
+  *:not(.wrap):not(span.select2-container),
+  .wrap >
+    .header,
+/*  .container */
+      .content >
+        *:not(.post-create),
+          .post-form.js-post-form > 
+            *:not(form),
+              div.content__title:nth-child(5),
+            /*  [children="OPTIONAL PASTE SETTINGS"]*/
+          /*  .post-form__bottom */
+            /*  .post-form__left > *:not(.field-postform-format)
+              /*  moved to saveless.css */
+                  .field-postform-category_id,
+                  .field-postform-tag,
+                .post-form__right > 
+                  *:not(.post-form__user),
+                    .post-form__avatar,
+                /*  .post-form__text */
+                      .post-form__name,
+      .sidebar
+{
+  display: none;
+}
+
+
+/*
+CONTAINER STYLES
+trim white space around textarea
+*/
+body {
+  height: auto;
+}
+
+.wrap {
+  padding: 0;
+  height: auto;
+  max-width: 100%;
+}
+
+.wrap > .container {
+  display: block;
+  padding-top: 10px;
+  min-height: auto;
+}
+
+
+/* TOP STYLES */
+
+.content__title:nth-child(3) {
+  color: transparent;
+}
+
+.toggle {
+  color: #ddd;
+}
+
+
+/* TEXTAREA STYLES */
+
+.field-postform-text,
+.field-postform-text > */* CodeMirror || textarea */
+{
+  min-height: 86.3vh;
+  /* min-height: 84.49vh; */
+  /* IF inline-block */
+}
+
+@media (max-width: 420px) {
+  .field-postform-text,
+  .field-postform-text > */* CodeMirror || textarea */
+  {
+    min-height: 85.55vh;
+  }
+  /* BOTTOM LEFT: */
+  .field-postform-format > * {
+    display: block;
+  }
+}
+
+@media (max-width: 510px) {
+  .post-form .form-horizontal .form-group.field-postform-text {
+    margin-bottom: 5px;
+  }
+  /* BOTTOM LEFT: */
+  .post-form__left {
+    padding-top: 0;
+  }
+}
+
+
+/* BOTTOM STYLES */
+
+.post-form__bottom {
+  flex-direction: column;
+}
+.post-form__bottom > * {
+  margin: 0 auto;
+}
+
+
+/* BOTTOM > LEFT (Optional Paste Settings) STYLES */
+.post-form__left {
+  min-width: unset;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .post-form__left * {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+.post-form__left .form-group .field-wrapper {
+  padding: 0 !important;
+  max-width: 300px;
+  width: 90vw;
+}
+
+
+/* Syntax Highlighting setting: */
+.post-form__left > *:not(:nth-child(9)) > * {
+  display: inline-block;
+}
+
+.field-postform-format *,
+span.select2-container * {
+  max-width: 100vw;
+}
+
+
+/* BOTTOM > RIGHT (account buttons) STYLES */
+
+.post-form__sign {
+  text-align: center;
+}
